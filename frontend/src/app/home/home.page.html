@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <p>Hola holita</p>
+    <ion-button (click)="goToTeamList()">Show Team-List</ion-button>
+    <ion-button (click)="goToCreateTeam()">Create Shop</ion-button>
+    <ion-list>
+      <ion-item *ngFor="let s of teams">
+        <p>Nombre del equipo: {{s.teamName}}</p>
+        <p>Entrenador: {{s.coach}}</p>
+        <p>Categoría: {{s.category}}</p>
+        <p>Número de jugadores: {{s.numberOfPlayers}}</p>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

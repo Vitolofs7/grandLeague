@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Actualizar Equipo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="updateTeam()">
+    <ion-item>
+      <ion-label position="floating">Nombre del Equipo</ion-label>
+      <ion-input [(ngModel)]="team.teamName" name="teamName" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Entrenador</ion-label>
+      <ion-input [(ngModel)]="team.coach" name="coach" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Categoría</ion-label>
+      <ion-input [(ngModel)]="team.category" name="category" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Número de Jugadores</ion-label>
+      <ion-input [(ngModel)]="team.numberOfPlayers" name="numberOfPlayers" type="number" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" type="submit">Actualizar</ion-button>
+  </form>
+</ion-content>

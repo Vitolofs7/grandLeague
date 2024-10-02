@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Creation Team</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Create Team</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form [formGroup]="teamForm" (ngSubmit)="createTeam()">
+    
+    <ion-item>
+      <ion-label position="floating">Team Name</ion-label>
+      <ion-input formControlName="teamName" type="text"></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="getFormControl('teamName')?.hasError('required') && getFormControl('teamName')?.touched">
+      The team name is required.
+    </ion-note>
+
+    <ion-item>
+      <ion-label position="floating">Coach</ion-label>
+      <ion-input formControlName="coach" type="text"></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="getFormControl('coach')?.hasError('required') && getFormControl('coach')?.touched">
+      The coach name is required.
+    </ion-note>
+
+    <ion-item>
+      <ion-label position="floating">Category</ion-label>
+      <ion-input formControlName="category" type="text"></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="getFormControl('category')?.hasError('required') && getFormControl('category')?.touched">
+      The category is required.
+    </ion-note>
+
+    <ion-item>
+      <ion-label position="floating">Number of Players</ion-label>
+      <ion-input formControlName="numberOfPlayers" type="number"></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="getFormControl('numberOfPlayers')?.hasError('required') && getFormControl('numberOfPlayers')?.touched">
+      The number of players is required.
+    </ion-note>
+
+    <ion-button type="submit" [disabled]="!teamForm.valid">Create</ion-button>
+    <ion-button (click)="goHome()">Home</ion-button>
+  </form>
+</ion-content>
