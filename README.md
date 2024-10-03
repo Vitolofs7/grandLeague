@@ -73,6 +73,7 @@ _Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener 
    cd frontend
    ionic serve
    ```
+
 ## Construido con 🛠️
 
 * [Express](https://expressjs.com/) - El framework web usado para el backend.
@@ -80,6 +81,10 @@ _Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener 
 * [Postman](https://www.postman.com/) - Para probar las APIs.
 * [Ionic](https://ionicframework.com/) - Framework para desarrollar aplicaciones móviles.
 * [Sequelize](https://sequelize.org/) - ORM utilizado para interactuar con la base de datos.
+
+### Documentación de la API
+
+Puedes encontrar la documentación de la API en este enlace: [Postman API Documentation](https://documenter.getpostman.com/view/38432313/2sAXxLCaB4).
 
 ## Autores ✒️
 
