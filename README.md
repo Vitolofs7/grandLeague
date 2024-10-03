@@ -1,4 +1,4 @@
-# CRUD de Equipos de Fútbol
+# CRUD Grand League Championship
 
 _Este proyecto permite gestionar un CRUD (Crear, Leer, Actualizar, Eliminar) de equipos de fútbol, utilizando una base de datos para almacenar la información relevante de cada equipo._
 
