@@ -65,7 +65,7 @@ _Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener 
    ('Inter Milan', 'Simone Inzaghi', 'Serie A', 25);
    ```
 
-6. Inicia el servidor del backend y el fronten:
+6. Inicia el servidor del backend y el frontend:
 
    ```bash
    cd backend
