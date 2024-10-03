@@ -82,9 +82,9 @@ _Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener 
 * [Ionic](https://ionicframework.com/) - Framework para desarrollar aplicaciones móviles.
 * [Sequelize](https://sequelize.org/) - ORM utilizado para interactuar con la base de datos.
 
-### Documentación de la API
+### Enlace a POSTMAN con los accesos a los end-points
 
-Puedes encontrar la documentación de la API en este enlace: [Postman API Documentation](https://documenter.getpostman.com/view/38432313/2sAXxLCaB4).
+Puedes encontrar los enlaces en: [Postman API Documentation](https://documenter.getpostman.com/view/38432313/2sAXxLCaB4).
 
 ## Autores ✒️
 
