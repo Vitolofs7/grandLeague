@@ -12,31 +12,31 @@ export class HomePage {
     {
       teamName: "Manchester City",
       coach: "Pep Guardiola",
-      league: "Premier League",
+      category: "Premier League",
       numberOfPlayers: 25,
     },
     {
       teamName: "Real Madrid",
       coach: "Carlo Ancelotti",
-      league: "La Liga",
+      category: "La Liga",
       numberOfPlayers: 24,
     },
     {
       teamName: "Atletico de Madrid",
       coach: "Diego Simeone",
-      league: "La Liga",
+      category: "La Liga",
       numberOfPlayers: 22,
     },
     {
       teamName: "Bayern Munich",
       coach: "Thomas Tuchel",
-      league: "Bundesliga",
+      category: "Bundesliga",
       numberOfPlayers: 23,
     },
     {
       teamName: "Liverpool",
       coach: "Jürgen Klopp",
-      league: "Premier League",
+      category: "Premier League",
       numberOfPlayers: 25,
     },
   ];
@@ -45,9 +45,5 @@ export class HomePage {
 
   goToTeamList(){
     this.router.navigateByUrl("/team-list"); 
-  }
-
-  goToCreateTeam(){
-    this.router.navigateByUrl("/creation-team");
   }
 }

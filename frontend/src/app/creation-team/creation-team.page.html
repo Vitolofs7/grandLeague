@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Creation Team</ion-title>
+    <ion-title>Creation Team Page</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,13 +11,13 @@
     </ion-toolbar>
   </ion-header>
 
-  <form [formGroup]="teamForm" (ngSubmit)="createTeam()">
-    
+  <form [formGroup]="teamForm" (ngSubmit)="createTeam()" class="team-form">
     <ion-item>
       <ion-label position="floating">Team Name</ion-label>
       <ion-input formControlName="teamName" type="text"></ion-input>
     </ion-item>
-    <ion-note color="danger" *ngIf="getFormControl('teamName')?.hasError('required') && getFormControl('teamName')?.touched">
+    <ion-note color="danger"
+      *ngIf="getFormControl('teamName')?.hasError('required') && getFormControl('teamName')?.touched">
       The team name is required.
     </ion-note>
 
@@ -33,7 +33,8 @@
       <ion-label position="floating">Category</ion-label>
       <ion-input formControlName="category" type="text"></ion-input>
     </ion-item>
-    <ion-note color="danger" *ngIf="getFormControl('category')?.hasError('required') && getFormControl('category')?.touched">
+    <ion-note color="danger"
+      *ngIf="getFormControl('category')?.hasError('required') && getFormControl('category')?.touched">
       The category is required.
     </ion-note>
 
@@ -41,11 +42,21 @@
       <ion-label position="floating">Number of Players</ion-label>
       <ion-input formControlName="numberOfPlayers" type="number"></ion-input>
     </ion-item>
-    <ion-note color="danger" *ngIf="getFormControl('numberOfPlayers')?.hasError('required') && getFormControl('numberOfPlayers')?.touched">
+    <ion-note color="danger"
+      *ngIf="getFormControl('numberOfPlayers')?.hasError('required') && getFormControl('numberOfPlayers')?.touched">
       The number of players is required.
     </ion-note>
 
-    <ion-button type="submit" [disabled]="!teamForm.valid">Create</ion-button>
-    <ion-button (click)="goHome()">Home</ion-button>
+    <div class="button-container">
+      <ion-button type="submit" color="tertiary" [disabled]="!teamForm.valid" class="submit-button">
+        <ion-icon name="add" slot="start"></ion-icon>
+        Create
+      </ion-button>
+      <ion-button class="go-home-button" color="tertiary" (click)="goHome()">
+        <ion-icon name="home" slot="start"></ion-icon>
+        Go Home
+      </ion-button>
+      <ion-button class="styled-button" color="tertiary" (click)="goToTeamList()">Show team list</ion-button>
+    </div>
   </form>
 </ion-content>

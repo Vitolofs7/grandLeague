@@ -1,29 +1,43 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      Home page
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
-    <p>Hola holita</p>
-    <ion-button (click)="goToTeamList()">Show Team-List</ion-button>
-    <ion-button (click)="goToCreateTeam()">Create Shop</ion-button>
+    <h2 class="championship-title">Grand League Championship</h2>
+
     <ion-list>
-      <ion-item *ngFor="let s of teams">
-        <p>Nombre del equipo: {{s.teamName}}</p>
-        <p>Entrenador: {{s.coach}}</p>
-        <p>Categoría: {{s.category}}</p>
-        <p>Número de jugadores: {{s.numberOfPlayers}}</p>
+      <ion-item class="table-header">
+        <div class="header-item">
+          <span class="field-name">Team Name</span>
+        </div>
+        <div class="header-item">
+          <span class="field-name">Coach Name</span>
+        </div>
+        <div class="header-item">
+          <span class="field-name">Category</span>
+        </div>
+        <div class="header-item">
+          <span class="field-name">Number Of Players</span>
+        </div>
+      </ion-item>
+
+      <ion-item *ngFor="let s of teams" class="team-row">
+        <div class="table-item">{{s.teamName}}</div>
+        <div class="table-item">{{s.coach}}</div>
+        <div class="table-item">{{s.category}}</div>
+        <div class="table-item">{{s.numberOfPlayers}}</div>
       </ion-item>
     </ion-list>
+
+    <div class="button-container">
+      <ion-button class="styled-button" color="tertiary" (click)="goToTeamList()">Show team list</ion-button>
+    </div>    
+
   </div>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 </ion-content>

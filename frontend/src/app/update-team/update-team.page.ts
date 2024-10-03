@@ -50,4 +50,8 @@ export class UpdateTeamPage implements OnInit {
       }
     );
   }
+
+  goHome() {
+    this.router.navigateByUrl("/");
+  }
 }

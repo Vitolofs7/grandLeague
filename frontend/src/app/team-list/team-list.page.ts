@@ -42,8 +42,13 @@ export class TeamListPage implements OnInit {
   updateThis(id: any) {
     this.router.navigate(['/update-team', id]);
   }
+  
   goHome() {
     this.router.navigateByUrl("/");
+  }
+
+  goToCreateTeam(){
+    this.router.navigateByUrl("/creation-team");
   }
 
 }

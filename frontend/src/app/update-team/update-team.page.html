@@ -1,31 +1,58 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Actualizar Equipo</ion-title>
+    <ion-title>Update Team</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <form (ngSubmit)="updateTeam()">
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Update Team</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form (ngSubmit)="updateTeam()" class="team-form">
     <ion-item>
-      <ion-label position="floating">Nombre del Equipo</ion-label>
+      <ion-label position="floating">Team Name</ion-label>
       <ion-input [(ngModel)]="team.teamName" name="teamName" required></ion-input>
     </ion-item>
+    <ion-note color="danger" *ngIf="!team.teamName && team.teamNameTouched">
+      The team name is required.
+    </ion-note>
 
     <ion-item>
-      <ion-label position="floating">Entrenador</ion-label>
+      <ion-label position="floating">Coach Name</ion-label>
       <ion-input [(ngModel)]="team.coach" name="coach" required></ion-input>
     </ion-item>
+    <ion-note color="danger" *ngIf="!team.coach && team.coachTouched">
+      The coach name is required.
+    </ion-note>
 
     <ion-item>
-      <ion-label position="floating">Categoría</ion-label>
+      <ion-label position="floating">Category</ion-label>
       <ion-input [(ngModel)]="team.category" name="category" required></ion-input>
     </ion-item>
+    <ion-note color="danger" *ngIf="!team.category && team.categoryTouched">
+      The category is required.
+    </ion-note>
 
     <ion-item>
-      <ion-label position="floating">Número de Jugadores</ion-label>
+      <ion-label position="floating">Number of Players</ion-label>
       <ion-input [(ngModel)]="team.numberOfPlayers" name="numberOfPlayers" type="number" required></ion-input>
     </ion-item>
+    <ion-note color="danger" *ngIf="!team.numberOfPlayers && team.numberOfPlayersTouched">
+      The number of players is required.
+    </ion-note>
 
-    <ion-button expand="block" type="submit">Actualizar</ion-button>
+    <div class="button-container">
+      <ion-button expand="block" type="submit" color="tertiary" class="submit-button">
+        <ion-icon name="add" slot="start"></ion-icon>
+        Update
+      </ion-button>
+      <ion-button (click)="goHome()" color="tertiary" class="home-button">
+        <ion-icon name="home" slot="start"></ion-icon>
+        Home
+      </ion-button>
+    </div>
   </form>
 </ion-content>

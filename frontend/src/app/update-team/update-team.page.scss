@@ -1,0 +1,40 @@
+.team-form {
+  padding: 16px; /* Internal spacing of the form */
+  background-color: #f9f9f9; /* Soft background color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  margin: 4em; /* Margin around the form */
+}
+
+ion-item {
+  --background: white; /* White background for the items */
+  border-radius: 8px; /* Rounded corners on the items */
+}
+
+ion-label {
+  font-size: 1.1rem; /* Font size for labels */
+  color: #000; /* Optional: Set color for better visibility */
+}
+
+ion-input {
+  font-size: 1.1rem; /* Font size for input fields */
+}
+
+ion-note {
+  font-size: 0.9rem; /* Font size for notes */
+}
+
+.button-container {
+  display: flex; /* Use flexbox to align buttons */
+  margin-top: 20px; /* Top margin for separation */
+}
+
+.submit-button {
+  color: white; /* White text color */
+  border-radius: 20px; /* Rounded corners */
+}
+
+.home-button {
+  border-radius: 20px; /* Rounded corners */
+  --background: transparent; /* No background for the home button */
+}

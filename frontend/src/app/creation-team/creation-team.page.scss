@@ -1,0 +1,32 @@
+.team-form {
+    padding: 16px; // Espaciado interno del formulario
+    background-color: #f9f9f9; // Color de fondo suave
+    border-radius: 10px; // Bordes redondeados
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Sombra para profundidad
+    margin: 4em; // Margen alrededor del formulario
+  }
+  
+  ion-item {
+    --background: white; // Fondo blanco para los ítems
+    border-radius: 8px; // Bordes redondeados en los ítems
+  }
+  
+  ion-note {
+    font-size: 0.9rem; // Tamaño de fuente para las notas
+  }
+  
+  .button-container {
+    display: flex; // Usar flexbox para alinear los botones
+    margin-top: 20px; // Espacio superior para separación
+  }
+  
+  .submit-button {
+    color: white; // Color del texto blanco
+    border-radius: 20px; // Bordes redondeados
+  }
+  
+  .home-button {
+    border-radius: 20px; // Bordes redondeados
+    --background: transparent; // Sin fondo para el botón de home
+  }
+  

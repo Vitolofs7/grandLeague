@@ -44,4 +44,8 @@ export class CreationTeamPage implements OnInit {
   goHome() {
     this.route.navigateByUrl("/");
   }
+
+  goToTeamList(){
+    this.route.navigateByUrl("/team-list"); 
+  }
 }
