@@ -6,7 +6,7 @@ _Este proyecto permite gestionar un CRUD (Crear, Leer, Actualizar, Eliminar) de 
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
-Mira **Deployment** para conocer cómo desplegar el proyecto.
+Mira **Instalación** para conocer cómo desplegar el proyecto.
 
 ### Pre-requisitos 📋
 
@@ -14,6 +14,7 @@ _Que cosas necesitas para instalar el software y como instalarlas_
 
 - **Node.js** - Necesario para ejecutar el backend.
 - **MySQL** - Para manejar la base de datos.
+- **MySQLWorkBench** - Para crear la base de datos.
 - **Postman** - Para probar las APIs.
 
 ```bash
@@ -101,7 +102,7 @@ Este proyecto está bajo la Licencia (MIT License) - mira el archivo [LICENSE.md
 * Comenta a otros sobre este proyecto 📢
 * Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
 * Da las gracias públicamente 🤓.
-* Dona con cripto a esta dirección: `0xf253fc233333078436d111175e5a76a649890000`
+* Dona con cripto a esta dirección: `mi casa`
 * etc.
 
 ---
