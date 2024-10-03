@@ -29,13 +29,13 @@ export class HomePage {
     },
     {
       teamName: "Bayern Munich",
-      coach: "Thomas Tuchel",
+      coach: "Vincent Kompany",
       category: "Bundesliga",
       numberOfPlayers: 23,
     },
     {
       teamName: "Liverpool",
-      coach: "Jürgen Klopp",
+      coach: "Arne Slot",
       category: "Premier League",
       numberOfPlayers: 25,
     },

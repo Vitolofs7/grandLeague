@@ -1,40 +1,40 @@
 .team-form {
-  padding: 16px; /* Internal spacing of the form */
-  background-color: #f9f9f9; /* Soft background color */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-  margin: 4em; /* Margin around the form */
+  padding: 16px; 
+  background-color: #f9f9f9; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  margin: 4em; 
 }
 
 ion-item {
-  --background: white; /* White background for the items */
-  border-radius: 8px; /* Rounded corners on the items */
+  --background: white; 
+  border-radius: 8px; 
 }
 
 ion-label {
-  font-size: 1.1rem; /* Font size for labels */
-  color: #000; /* Optional: Set color for better visibility */
+  font-size: 1.1rem; 
+  color: #000; 
 }
 
 ion-input {
-  font-size: 1.1rem; /* Font size for input fields */
+  font-size: 1.1rem; 
 }
 
 ion-note {
-  font-size: 0.9rem; /* Font size for notes */
+  font-size: 0.9rem; 
 }
 
 .button-container {
-  display: flex; /* Use flexbox to align buttons */
-  margin-top: 20px; /* Top margin for separation */
+  display: flex;
+  margin-top: 20px; 
 }
 
 .submit-button {
-  color: white; /* White text color */
-  border-radius: 20px; /* Rounded corners */
+  color: white; 
+  border-radius: 20px; 
 }
 
 .home-button {
-  border-radius: 20px; /* Rounded corners */
-  --background: transparent; /* No background for the home button */
+  border-radius: 20px;
+  --background: transparent; 
 }

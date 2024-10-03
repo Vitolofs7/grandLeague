@@ -69,7 +69,6 @@ exports.update = (req, res) => {
             Team.findByPk(id).then(data => {
                 res.send(data);
             })
-            // res.send({ message: "Team updated correctly." });
         } else {
             res.send({ message: `Could not update the team with id=${id}. The team was not found or the request body is empty.` });
         }

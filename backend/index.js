@@ -15,13 +15,13 @@ app.use(express.urlencoded({ extended: true }));
 
 const db = require("./models");
 
-db.sequelize.sync().then(() => {
-    console.log("database alredy synced");
-})
-
-// db.sequelize.sync({ force: true }).then(() => {
+// db.sequelize.sync().then(() => {
 //     console.log("database alredy synced");
 // })
+
+db.sequelize.sync({ force: true }).then(() => {
+    console.log("database alredy synced");
+})
 
 app.get("/", (req, res) => {
     res.json({ message: "Welcome to grandLeague application." });

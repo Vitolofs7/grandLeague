@@ -24,8 +24,8 @@ const routes: Routes = [
     loadChildren: () => import('./update-team/update-team.module').then( m => m.UpdateTeamPageModule)
   },
   {
-    path: 'update-team/:id',  // Nueva ruta añadida
-    loadChildren: () => import('./update-team/update-team.module').then(m => m.UpdateTeamPageModule) // Asegúrate de que la ruta del módulo es correcta
+    path: 'update-team/:id',
+    loadChildren: () => import('./update-team/update-team.module').then(m => m.UpdateTeamPageModule) 
   },
 ];
 

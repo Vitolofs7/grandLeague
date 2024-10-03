@@ -9,7 +9,7 @@ import { TeamService } from '../services/team.service';
 })
 export class UpdateTeamPage implements OnInit {
 
-  team: any = {}; // Objeto para almacenar los datos del equipo
+  team: any = {};
 
   constructor(
     private route: ActivatedRoute,
@@ -18,8 +18,8 @@ export class UpdateTeamPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id'); // Obtener el ID del equipo de la URL
-    console.log('ID del equipo:', id); // Verificar que el ID es válido
+    const id = this.route.snapshot.paramMap.get('id');
+    console.log('ID del equipo:', id);
     if (id) {
       this.loadTeam(id);
     } else {
@@ -30,7 +30,7 @@ export class UpdateTeamPage implements OnInit {
   loadTeam(id: string) {
     this.teamService.getTeamById(id).subscribe(
       (data: any) => {
-        this.team = data; // Cargar los datos del equipo en el objeto
+        this.team = data;
       },
       (error: any) => {
         console.error('Error al cargar los datos del equipo:', error);
@@ -39,11 +39,11 @@ export class UpdateTeamPage implements OnInit {
   }
 
   updateTeam() {
-    console.log('Datos del equipo a actualizar:', this.team); // Verificar el contenido
+    console.log('Datos del equipo a actualizar:', this.team);
     this.teamService.update(this.team.id, this.team).subscribe(
       (response: any) => {
         console.log('Equipo actualizado exitosamente:', response);
-        this.router.navigate(['/team-list']); // Redirigir a la lista de equipos
+        this.router.navigate(['/team-list']);
       },
       (error: any) => {
         console.error('Error al actualizar el equipo:', error);
