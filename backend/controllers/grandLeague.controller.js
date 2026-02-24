@@ -1,97 +1,82 @@
-const db = require("../models");
-const Team = db.team;
+const supabase = require("../config/supabase.config");
 
-exports.create = (req, res) => { 
-    const team = {
-        teamName: req.body.teamName, 
-        coach: req.body.coach, 
-        category: req.body.category,
-        numberOfPlayers: req.body.numberOfPlayers 
-    };
-    Team.create(team)
-        .then((data) => {
-            res.status(201).send(data);
-        })
-        .catch((error) => {
-            res.status(500).send({
-                message: "Error creating the team",
-                error: error.message
-            });
-        });
+exports.create = async (req, res) => {
+  const { teamName, coach, category, numberOfPlayers } = req.body;
+
+  const { data, error } = await supabase
+    .from("teams")
+    .insert([{ teamName, coach, category, numberOfPlayers }])
+    .select()
+    .single();
+
+  if (error) {
+    return res
+      .status(500)
+      .send({ message: "Error creating the team", error: error.message });
+  }
+  res.status(201).send(data);
 };
 
-exports.findAll = (req, res) => { 
-    Team.findAll()
-        .then((data) => {
-            res.status(200).send(data);
-        })
-        .catch((error) => {
-            res.status(500).send({
-                message: "Error obtaining teams",
-                error: error.message
-            });
-        });
+exports.findAll = async (req, res) => {
+  const { data, error } = await supabase
+    .from("teams")
+    .select("*")
+    .order("id", { ascending: true });
+
+  if (error) {
+    return res
+      .status(500)
+      .send({ message: "Error obtaining teams", error: error.message });
+  }
+  res.status(200).send(data);
 };
 
-exports.findOne = (req, res) => { 
-    const id = req.params.id;
+exports.findOne = async (req, res) => {
+  const id = req.params.id;
 
-    Team.findByPk(id) 
-        .then((data) => {
-            if (!data) {
-                return res.status(404).send({ message: "Team not found" });
-            }
-            res.status(200).send(data);
-        })
-        .catch((error) => {
-            res.status(500).send({
-                message: "Error obtaining the team",
-                error: error.message
-            });
-        });
+  const { data, error } = await supabase
+    .from("teams")
+    .select("*")
+    .eq("id", id)
+    .single();
+
+  if (error || !data) {
+    return res.status(404).send({ message: "Team not found" });
+  }
+  res.status(200).send(data);
 };
 
-exports.update = (req, res) => { 
-    const id = req.params.id;
+exports.update = async (req, res) => {
+  const id = req.params.id;
+  const { teamName, coach, category, numberOfPlayers } = req.body;
 
-    Team.update(
-        {
-            teamName: req.body.teamName,
-            coach: req.body.coach,
-            category: req.body.category,
-            numberOfPlayers: req.body.numberOfPlayers
-        },
-        { where: { id: id } }
-    )
-    .then((num) => {
-        console.log(num)
-        if (num == 1) {
-            Team.findByPk(id).then(data => {
-                res.send(data);
-            })
-        } else {
-            res.send({ message: `Could not update the team with id=${id}. The team was not found or the request body is empty.` });
-        }
-    })
-    .catch((error) => {
-        res.status(500).send({
-            message: "Error updating the team",
-            error: error.message
-        });
-    });
+  const { data, error } = await supabase
+    .from("teams")
+    .update({ teamName, coach, category, numberOfPlayers })
+    .eq("id", id)
+    .select()
+    .single();
+
+  if (error || !data) {
+    return res
+      .status(500)
+      .send({
+        message: `Could not update the team with id=${id}.`,
+        error: error?.message,
+      });
+  }
+  res.status(200).send(data);
 };
 
-exports.delete = (req, res) => { 
-    const id = req.params.id;
+exports.delete = async (req, res) => {
+  const id = req.params.id;
 
-    Team.destroy({ where: { id: id } })
-        .then(() => {
-            res.send({ message: "Team deleted" });
-        })
-        .catch((error) => {
-            res.status(500).send({
-                message: "Error deleting the team",
-                error: error.message
-            });
-        });
+  const { error } = await supabase.from("teams").delete().eq("id", id);
+
+  if (error) {
+    return res
+      .status(500)
+      .send({ message: "Error deleting the team", error: error.message });
+  }
+  res.status(200).send({ message: "Team deleted" });
 };

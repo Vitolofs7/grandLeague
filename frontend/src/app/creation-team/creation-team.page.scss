@@ -1,32 +1,35 @@
 .team-form {
-    padding: 16px; 
-    background-color: #f9f9f9; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 4em;
+    padding: 16px;
+    background-color: var(--app-form-bg);
+    border-radius: 10px;
+    box-shadow: var(--app-card-shadow);
+    margin: 2em;
   }
-  
+
   ion-item {
-    --background: white; 
-    border-radius: 8px; 
+    --background: var(--app-card-bg);
+    --color: var(--app-text-primary);
+    border-radius: 8px;
   }
-  
+
+  ion-label {
+    color: var(--app-text-primary) !important;
+  }
+
   ion-note {
     font-size: 0.9rem;
   }
-  
+
   .button-container {
-    display: flex; 
-    margin-top: 20px; 
+    display: flex;
+    margin-top: 20px;
   }
-  
+
   .submit-button {
-    color: white; 
-    border-radius: 20px; 
+    border-radius: 20px;
   }
-  
+
   .home-button {
     border-radius: 20px;
     --background: transparent;
   }
-  

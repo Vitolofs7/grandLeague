@@ -11,7 +11,7 @@ export class TeamService {
   constructor(private httpClient: HttpClient) { }
 
   getAll() {
-    return this.httpClient.get(this.endPoint); 
+    return this.httpClient.get(this.endPoint);
   }
 
   delete(id: any) {
@@ -20,20 +20,11 @@ export class TeamService {
 
   update(id: any, teamData: any) {
     return this.httpClient.put(`${this.endPoint}/${id}`, teamData);
-}
+  }
 
   create(team: any) {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/x-www-form-urlencoded'
-    });
-
-    const body = new URLSearchParams();
-    body.append("teamName", team.teamName);
-    body.append("coach", team.coach);
-    body.append("category", team.category);
-    body.append("numberOfPlayers", team.numberOfPlayers);
-
-    return this.httpClient.post(this.endPoint, body.toString(), { headers }); 
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.httpClient.post(this.endPoint, team, { headers });
   }
 
   getTeamById(id: any) {

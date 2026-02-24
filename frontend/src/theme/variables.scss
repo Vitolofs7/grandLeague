@@ -1,2 +1,53 @@
-// For information on how to create your own theme, please see:
-// http://ionicframework.com/docs/theming/
+// Ionic CSS Variables - Light & Dark Mode Support
+// https://ionicframework.com/docs/theming/dark-mode
+
+:root {
+  --ion-color-primary: #4a90e2;
+  --ion-color-primary-rgb: 74, 144, 226;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #3a7bc8;
+  --ion-color-primary-tint: #5c9be5;
+
+  --ion-color-secondary: #5cb85c;
+  --ion-color-secondary-rgb: 92, 184, 92;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #4da34d;
+  --ion-color-secondary-tint: #6ebf6e;
+
+  --ion-color-tertiary: #6f42c1;
+  --ion-color-tertiary-rgb: 111, 66, 193;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #623baa;
+  --ion-color-tertiary-tint: #7d55c7;
+
+  --ion-color-success: #2dd36f;
+  --ion-color-warning: #ffc409;
+  --ion-color-danger: #eb445a;
+
+  // Card / surface colors
+  --app-card-bg: #ffffff;
+  --app-card-border: rgba(0, 0, 0, 0.08);
+  --app-card-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  --app-text-primary: #1a1a2e;
+  --app-text-secondary: #444466;
+  --app-form-bg: #f4f6fa;
+  --app-header-bg: #4a90e2;
+  --app-row-bg: #f0f4fb;
+}
+
+// Dark mode overrides (follows system preference via dark.system.css)
+@media (prefers-color-scheme: dark) {
+  :root {
+    --app-card-bg: #1e2030;
+    --app-card-border: rgba(255, 255, 255, 0.08);
+    --app-card-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    --app-text-primary: #e8eaf6;
+    --app-text-secondary: #b0b8d4;
+    --app-form-bg: #16182a;
+    --app-header-bg: #2c3a6b;
+    --app-row-bg: #242840;
+  }
+}
